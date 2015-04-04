@@ -44,7 +44,10 @@ angular.module('starter.controllers', [])
   ];
 })
 .controller('ListCtrl', function($scope){
-  $scope.lists =[];
+  $scope.rdrLists = function() {
+    $location.path('/lists');
+  }
+
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

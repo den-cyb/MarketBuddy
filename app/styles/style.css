@@ -1,4 +1,22 @@
 /* Empty. Add your own CSS if you like */
 #footer{
 	padding-bottom: 45px;
+	background-color: #cd9b9b;
+}
+
+#header{
+	background-color: orange;
+}
+#up{
+	position:fixed;
+	padding-top: 200px;
+}
+.scroll-content{ background-image: url(file:///C:/Projects/Development/MarketBuddy/app/images/food.jpg);
+  -moz-background-size: cover;
+    background-size: cover;
+}
+#down{
+	position: fixed;
+	padding-top: 300px;
+	float:both;
 }

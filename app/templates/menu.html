@@ -5,7 +5,7 @@
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        <button class="button button-icon icon ion-ios7-navigate-outline" menu-toggle="left">
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -18,6 +18,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
+        <ion-item nav-clear menu-close href="#/app/home">
+          Home
+        </ion-item>
         <ion-item nav-clear menu-close ng-click="login()">
           Login
         </ion-item>
@@ -29,9 +32,6 @@
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/playlists">
           Playlists
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/lists">
-          Lists
         </ion-item>
       </ion-list>
     </ion-content>
