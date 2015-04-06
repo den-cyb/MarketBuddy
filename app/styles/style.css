@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 #footer{
 	padding-bottom: 45px;
-	background-color: #cd9b9b;
+
 }
 
 #header{
@@ -11,9 +11,8 @@
 	position:fixed;
 	padding-top: 200px;
 }
-.scroll-content{ background-image: url(file:///C:/Projects/Development/MarketBuddy/app/images/food.jpg);
-  -moz-background-size: cover;
-    background-size: cover;
+.scroll-content{
+    background-image: url("images/vegetable.jpg");
 }
 #down{
 	position: fixed;

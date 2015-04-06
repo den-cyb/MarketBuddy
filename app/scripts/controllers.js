@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
@@ -43,11 +43,35 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
-.controller('ListCtrl', function($scope){
-  $scope.rdrLists = function() {
-    $location.path('/lists');
-  }
-
+.controller('ListCtrl', function($scope, $ionicPopup){
+ $scope.showPopup = function() {
+  $scope.data = {}
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="data.name">',
+    title: 'New Shopping List',
+    subTitle: 'Please enter a name for your list',
+    scope: $scope,
+    buttons: [      
+      {
+        text: 'Add',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.name) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.name;
+          }
+        }
+      }
+    ,{ text: 'Cancel',
+    type: 'button-assertive' }]
+  });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+}
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
