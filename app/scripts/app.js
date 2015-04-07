@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       }
     })
     .state('app.item', {
-      url: '/lists/:id',
+      url: '/items',
       views: {
         'menuContent' :{
           templateUrl: 'templates/items.html',

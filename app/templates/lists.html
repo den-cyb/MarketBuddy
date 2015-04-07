@@ -7,19 +7,23 @@
     <button class="button button-icon icon ion-ios7-plus-empty" ng-click="showPopup()"></button>
   </ion-nav-buttons>
   <!-- contents -->
-  <ion-content class="has-header">
+  <ion-content class="has-header" class="list list-inset">
     <div id="itView">
     <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
+      <label class="bar-header item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
         <input type="text" placeholder="Filter by name..." ng-model="searchText">
       </label>
     </div>
-    <ion-list show-delete="shouldShowDelete">
-      <ion-item class="item-icon-right" ng-repeat="list in lists | filter:searchText" 
-          href="#/app/lists/{{list.id}}" ng-click="keepCurrentList(list)"><ion-delete-button class="ion-minus-circled" ng-click="remList($index)"></ion-delete-button>
-        {{list.name}}   <i class="icon ion-chevron-right icon-accessory"></i>     
-      </ion-item>      
+    <ion-list show-delete="shouldShowDelete" class="list list-inset">
+        <ion-item class="item-icon-right" href="#/app/items">
+        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+          Hello, list (Test)!<i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+        <ion-item class="item-icon-right">
+        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
     </ion-list>
     </div>
   </ion-content>

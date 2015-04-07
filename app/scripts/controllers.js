@@ -73,5 +73,45 @@ angular.module('starter.controllers', ['ionic'])
   });
 }
 })
+.controller('ItemCtrl', function($scope, $ionicPopup, $stateParams) {
+  $scope.items = [];
+  $scope.updateItems = function(items) {
+  /*cList = storage.get('cList');
+  storage.set(cList.name+'items', items);  */
+   var alertPopup = $ionicPopup.alert({
+     /*title: 'Update',*/
+     template: 'Your current list has been updated'
+   });
+   alertPopup.then(function(res) {
+     console.log('Update Successfull');
+   });
+ };
+   $scope.showPopup = function() {
+  $scope.data = {}
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="data.name">',
+      title: 'Enter name for item',
+      scope: $scope,
+      buttons: [{
+        text: '<b>Save</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.name) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.name;
+          }
+        }
+      }
+    ,{ text: 'Cancel',
+    type: 'button-assertive' }]
+  });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+}
+})
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
