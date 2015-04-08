@@ -94,7 +94,7 @@ angular.module('starter.controllers', ['ionic'])
       title: 'Enter name for item',
       scope: $scope,
       buttons: [{
-        text: '<b>Save</b>',
+        text: '<b>Add</b>',
         type: 'button-positive',
         onTap: function(e) {
           if (!$scope.data.name) {

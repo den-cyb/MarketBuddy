@@ -9,14 +9,14 @@
 }
 #up{
 	position:fixed;
-	padding-top: 200px;
+	padding-top: 250px;
 }
 .scroll-content{
     background-image: url("images/vegetable.jpg");
 }
 #down{
 	position: fixed;
-	padding-top: 300px;
+	padding-top: 350px;
 	float:both;
 }
 #menuHead{
@@ -42,4 +42,7 @@
     left: 50%;
     -webkit-transform: translate( -50%);
     transform: translate( -50%);
+}
+#update{
+	padding-top: 3px;
 }
