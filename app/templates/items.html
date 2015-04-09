@@ -2,90 +2,59 @@
 
 <ion-view title="Items">
   <ion-nav-buttons side="left">
-    <button menu-toggle="left" ng-click="back" class="button button-icon icon ion-ios7-navigate-outline"></button>
+    <img  menu-toggle="left" ng-click="back" style="width:37px" src="\images\ionic.png">
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
     <button class="button button-icon icon ion-compose" ng-click="showPopup()"></button>
   </ion-nav-buttons>  
   <!-- contents -->
     <ion-content class="has-header">
+   
     <div id="itView">
   <!-- <ion-item class="item-icon-right"> -->
+  <ion-list show-delete="shouldShowDelete">
   <ul class="list list-inset">
-
+    <ion-list show-delete="shouldShowDelete">
+    <ion-item>
     <li class="item item-checkbox item-icon-right">
-      <label class="checkbox">
+      <label class="checkbox checkbox-balanced">
        <input type="checkbox" ng-model="item.isChecked">
-     </label>
-     Mee<button class="button button-icon icon ion-ios7-close-outline" ng-click="remItem($index)"></button></li>
-  
+     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
+     Mee
+     </li>
+   </ion-item>
+   <ion-item>
   <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
+     <label class="checkbox checkbox-balanced">
        <input type="checkbox">
-     </label>
-     Flux Capacitor<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
+     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
+     Flux Capacitor
   </li>
+  </ion-item>
+  <ion-item>
 <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
+     <label class="checkbox checkbox-balanced">
        <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
+     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
+     1.21 Gigawatt
   </li>
- <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gigawatt<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox">
-       <input type="checkbox">
-     </label>
-     1.21 Gig<button class="button button-icon icon ion-ios7-close-outline icon-right" ng-click="remItem($index)"></button>
-  </li>
+ </ion-item>
 </ul>
 
+</ion-list>
 </div>
-
-  </ion-content>
+</ion-content>
   
 </ion-view>
 <!-- footer -->
-<ion-footer-bar align-title="left" class="bar-assertive">
-  <div class="title" id="update">
+<ion-footer-bar align-title="left" class="bar-dark">
+  <div>
+    <ion-toggle class="bar bar-assertive" ng-model="shouldShowDelete">
+  <i>Del</i>
+</ion-toggle>
+  </div>
+  <h1 class="title"></h1>
   <div class="buttons" ng-click="updateItems(items)">
-    <button id="update" style="font-size: 25px;" class="button button-balanced">Update List</button>
+    <button style="font-size: 25px;"class="button button-balanced">Update List</i></button>
   </div>
-  </div>
-  
 </ion-footer-bar>

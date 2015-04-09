@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 #footer{
 	padding-bottom: 45px;
-
+	font-family: Papyrus;
 }
 
 #header{
@@ -9,40 +9,62 @@
 }
 #up{
 	position:fixed;
-	padding-top: 250px;
 }
 .scroll-content{
-    background-image: url("images/vegetable.jpg");
+    background-image: url("images/food.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
-#down{
-	position: fixed;
-	padding-top: 350px;
-	float:both;
-}
+
 #menuHead{
-	font-family: Informal Roman;
-	font-size: 50px;
+	font-family: Vivaldi;
+	font-size: 30px;
 	height: 50px;
 }
 #Head{
-	font-family: Forte;
-	font-size: 100%;
+	font-family:papyrus;
+	
 }
 .list{
-	font-family: comic sans ms;
+	font-family:papyrus;
 	text-align: center;
+	font-weight: bold;
 }
 .button{
-	font-family: Informal Roman;
-	font-size:30px;
+	font-family: Papyrus;
+	font-size:25px;
+	font-weight: normal;
 }
 #icon{
 	position: absolute;
-	top:50px;	
+	top:150px;	
     left: 50%;
     -webkit-transform: translate( -50%);
     transform: translate( -50%);
 }
 #update{
 	padding-top: 3px;
+}
+i{
+	font-family: Papyrus;
+	font-size: 20px
+}
+#appName{
+	font-family: Papyrus;
+	text-align: center;
+	padding-top: 90px;
+	font-size: 50px;
+	color: white;
+}
+#motto{
+	padding-top: 200px;
+	text-align: center;
+	font-family: rage;
+	font-size: 30px;
+	color: white;
+}
+h3,h4{
+	color: white;
+	text-align: center;
 }
