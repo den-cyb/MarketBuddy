@@ -46,7 +46,7 @@
 }
 i{
 	font-family: Papyrus;
-	font-size: 20px
+	font-size: 20px;
 }
 #appName{
 	font-family: Papyrus;
@@ -54,13 +54,15 @@ i{
 	padding-top: 90px;
 	font-size: 50px;
 	color: white;
+	text-shadow: 2px 2px orange;
 }
 #motto{
 	padding-top: 200px;
 	text-align: center;
 	font-family: rage;
-	font-size: 30px;
+	font-size: 40px;
 	color: white;
+	text-shadow: 2px 2px #2C3539;
 }
 h3,h4{
 	color: white;
