@@ -4,9 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+var db = null;
 angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -17,6 +18,8 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+   db = $cordovaSQLite.openDB("my.db");
+            $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
   });
 })
 
@@ -30,11 +33,11 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
+  .state('app.about', {
+    url: "/about",
     views: {
       'menuContent': {
-        templateUrl: "templates/search.html"
+        templateUrl: "templates/about.html"
       }
     }
   })
