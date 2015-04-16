@@ -1,11 +1,11 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-balanced" id="Head" style="font-size:30px;">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
-        <img  menu-toggle="left" ng-click="back" style="width:37px" src="\images\ionic.png">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-click="back"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -30,7 +30,7 @@
         </div>   
         <div class="row">
           <div class="col">
-            <a class="button button-block button-assertive" menu-close href="#/app/search">About App</i></a>
+            <a class="button button-block button-assertive" menu-close href="#/app/about">About App</i></a>
           </div>
         </div>  
       </ion-list>      

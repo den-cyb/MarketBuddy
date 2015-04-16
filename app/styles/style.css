@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 #footer{
-	padding-bottom: 45px;
+	padding-bottom:50px;
 	font-family: Papyrus;
 }
 
@@ -9,6 +9,7 @@
 }
 #up{
 	position:fixed;
+	padding-top: 260px;
 }
 .scroll-content{
     background-image: url("images/food.jpg");
@@ -62,7 +63,7 @@ i{
 	padding-top: 200px;
 	text-align: center;
 	font-family: rage;
-	font-size: 40px;
+	font-size: 20px;
 	color: white;
 	text-shadow: 2px 2px #2C3539;
 }

@@ -2,59 +2,45 @@
 
 <ion-view title="Items">
   <ion-nav-buttons side="left">
-    <img  menu-toggle="left" ng-click="back" style="width:37px" src="\images\ionic.png">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-click="back"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
     <button class="button button-icon icon ion-compose" ng-click="showPopup()"></button>
   </ion-nav-buttons>  
+  <ion-toggle class="bar bar-subheader bar-assertive" ng-model="shouldShowDelete">
+  Delete item
+</ion-toggle>
   <!-- contents -->
     <ion-content class="has-header">
    
     <div id="itView">
   <!-- <ion-item class="item-icon-right"> -->
   <ion-list show-delete="shouldShowDelete">
+  <br>
+  <br>
   <ul class="list list-inset">
-    <ion-list show-delete="shouldShowDelete">
-    <ion-item>
-    <li class="item item-checkbox item-icon-right">
+  <li>
+    <ion-item class="item-icon-right" ng-repeat="item in items | filter:searchText">
+    <em class="item item-checkbox">
       <label class="checkbox checkbox-balanced">
        <input type="checkbox" ng-model="item.isChecked">
-     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
-     Mee
-     </li>
-   </ion-item>
-   <ion-item>
-  <li class="item item-checkbox item-icon-right">
-     <label class="checkbox checkbox-balanced">
-       <input type="checkbox">
-     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
-     Flux Capacitor
-  </li>
+     </label>
+     <ion-delete-button class="ion-minus-circled"></ion-delete-button>
+     {{item.name}}</em>
+    
   </ion-item>
-  <ion-item>
-<li class="item item-checkbox item-icon-right">
-     <label class="checkbox checkbox-balanced">
-       <input type="checkbox">
-     </label><ion-delete-button class="ion-minus-circled"></ion-delete-button>
-     1.21 Gigawatt
   </li>
- </ion-item>
+    
 </ul>
-
+<br>
 </ion-list>
 </div>
-</ion-content>
-  
-</ion-view>
+</ion-content>  
+
 <!-- footer -->
 <ion-footer-bar align-title="left" class="bar-dark">
-  <div>
-    <ion-toggle class="bar bar-assertive" ng-model="shouldShowDelete">
-  <i>Del</i>
-</ion-toggle>
-  </div>
-  <h1 class="title"></h1>
-  <div class="buttons" ng-click="updateItems(items)">
-    <button style="font-size: 25px;"class="button button-balanced">Update List</i></button>
-  </div>
+  <h1 class="title"><div class="buttons" ng-click="updateItems(items)">
+    <button class="button button-balanced">Update List</button>
+  </div></h1>
+  
 </ion-footer-bar>

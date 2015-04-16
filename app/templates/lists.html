@@ -1,7 +1,7 @@
   <!-- header of shoppinglist view -->
 <ion-view view-title="Shopping Lists">
   <ion-nav-buttons side="left">
-    <img  menu-toggle="left" ng-click="back" style="width:37px" src="\images\ionic.png">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-click="back"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
     <button class="button button-icon icon ion-ios7-plus-empty" ng-click="showPopup()"></button>
@@ -15,39 +15,14 @@
         <input type="text" placeholder="Filter by list name..." ng-model="searchText">
       </label>
     </div>
-    <ion-list show-delete="shouldShowDelete" class="list list-inset">
-        <ion-item class="item-icon-right" href="#/app/items">
+    <ion-list show-delete="shouldShowDelete">
+        
+        <ion-item class="item-icon-right" ng-repeat="list in lists" href="#/app/items">
         <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Hello, list (Test)!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
-        <ion-item class="item-icon-right">
-        <ion-delete-button class="ion-minus-circled"></ion-delete-button>
-          Yet Another Entry!<i class="icon ion-chevron-right icon-accessory"></i>
-        </ion-item>
+        {{list.title}}
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+        
     </ion-list>
     </div>
   </ion-content>
