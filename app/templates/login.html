@@ -23,3 +23,173 @@
     </form>
   </ion-content>
 </ion-modal-view>
+
+
+.controller('ListCtrl', function($scope, $ionicPlatform, $ionicPopup, $stateParams, $cordovaSQLite){
+  $scope.lists = [
+    { title: 'Tech Junction'},
+    { title: 'Kejetia'},
+    { title: 'Ayigya'}
+  ];
+  
+ $scope.showPopup = function() {
+  $scope.data = {}
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="data.name">',
+    title: 'New Shopping List',
+    subTitle: 'Please enter a name for your list',
+    scope: $scope,
+    buttons: [      
+      {
+        text: 'Add',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.name) {
+            //don't allow the user to close unless he enters a list name
+            e.preventDefault();
+          } else {
+            return $scope.data.name;
+          }
+        }
+      }
+    ,{ text: 'Cancel',
+    type: 'button-assertive' }]
+  });
+  myPopup.then(function(res) {
+    
+    console.log('Tapped!', res);
+    
+  });
+  
+}
+})
+.controller('ItemCtrl', function($scope, $ionicPopup, $stateParams, $cordovaSQLite) {
+  $scope.listItems = [
+    { title: 'Milk' },
+    { title: 'Mushrooms' },
+    { title: 'CornFlakes'},
+    { title: 'Brown Sugar'},
+    { title: 'Cocoa' },
+    { title: 'Fish' }
+  ];
+ 
+  $scope.updateItems = function(items) {
+    var alertPopup = $ionicPopup.alert({
+     /*title: 'Update',*/
+     template: 'Your current list has been updated'
+   });
+   alertPopup.then(function(res) {
+     console.log('Update Successfull');
+   });
+ };
+  //removes an item from the item view
+ 
+   $scope.showPopup = function() {
+  $scope.data = {}
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="data.name">',
+      title: 'Enter name for item',
+      scope: $scope,
+      buttons: [{
+        text: '<b>Add</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.name) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.name;
+          }
+        }
+      }
+    ,{ text: 'Cancel',
+    type: 'button-assertive' }]
+  });
+  myPopup.then(function(res) {
+     console.log('Tapped!', res);
+    });
+}
+})
+
+  <!-- header of shoppinglist view -->
+<ion-view view-title="Shopping Lists">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-click="back"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios7-plus-empty" ng-click="showPopup()"></button>
+  </ion-nav-buttons>
+  <!-- contents -->
+  <ion-content class="has-header">
+    <div id="itView">
+    <div class="list list-inset">
+      <label class="bar-header item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="text" placeholder="Filter by list name..." ng-model="searchText">
+      </label>
+    </div>
+    <ion-list show-delete="shouldShowDelete">
+        
+        <ion-item class="item-icon-right" ng-repeat="list in lists" href="#/app/items">
+        <ion-delete-button class="ion-minus-circled"ng-click="remList($index)"></ion-delete-button>
+        {{list.title}}
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+       
+      </ion-list>
+    </div>
+  </ion-content>
+  <!-- footer -->
+ <ion-footer-bar align-title="left" class="bar-assertive" id="footer">
+     <ion-toggle class="bar bar-header bar-assertive" ng-model="shouldShowDelete">
+  Delete List
+</ion-toggle>
+</ion-footer-bar>
+</ion-view>
+
+
+ <!-- header of item view -->
+<ion-view title="Items">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-click="back"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios7-plus-empty" ng-click="showPopup()"></button>
+  </ion-nav-buttons>  
+  <ion-toggle class="bar bar-subheader bar-assertive" ng-model="shouldShowDelete">
+  Delete item
+  </ion-toggle>
+  <!-- contents -->
+    <ion-content class="has-header">   
+    <div id="itView">
+   <ion-list show-delete="shouldShowDelete">
+  <br>
+  <br>
+  <ul class="list list-inset">
+  <li>
+    <ion-item class="item-icon-right"  ng-repeat="listItem in listItems">
+    <em class="item item-checkbox">
+      <label class="checkbox checkbox-balanced">
+       <input type="checkbox" ng-model="item.isChecked">
+     </label>
+     <ion-delete-button class="ion-minus-circled"ng-click="remItem($index)"></ion-delete-button>
+     {{listItem.title}}</em>    
+  </ion-item>
+   </li>    
+</ul>
+<br>
+</ion-list>
+</div>
+</ion-content>  
+
+<!-- footer -->
+<ion-footer-bar align-title="left" class="bar-dark">
+  <h1 class="title"><div class="buttons" ng-click="updateItems(items)">
+    <button class="button button-balanced">Update List</button>
+  </div></h1>
+  
+</ion-footer-bar>
+
+

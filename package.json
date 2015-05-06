@@ -2,7 +2,9 @@
   "name": "MarketBuddy",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "shelljs": "^0.4.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "glob": "~4.3.5",

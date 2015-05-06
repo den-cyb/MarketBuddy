@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var db = null;
+
 angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 
 .run(function($ionicPlatform, $cordovaSQLite) {
@@ -49,52 +50,26 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
+
+  .state('config', {
+      url: '/config',
+      templateUrl: 'templates/config.html',
+      controller: 'ConfigController'
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-    .state('app.lists', {
-     url: "/lists",
-     views: {
-       'menuContent': {
-         templateUrl: "templates/lists.html",
-         controller: 'ListCtrl'
-        }
-      }
-    })
-    .state('app.item', {
-      url: '/items',
-      views: {
-        'menuContent' :{
-          templateUrl: 'templates/items.html',
-          controller: 'ItemCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
+  .state('categories', {
+      url: '/categories',
+      templateUrl: 'templates/categories.html',
+      controller: 'CategoriesController'
+  })
+  .state('lists', {
+      url: '/lists/:categoryId',
+      templateUrl: 'templates/lists.html',
+      controller: 'ListsController'
+  })
+  .state('items', {
+      url: "/items/:listId",
+      templateUrl: "templates/items.html",
+      controller: "ItemsController"
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+$urlRouterProvider.otherwise('/config');
 });
