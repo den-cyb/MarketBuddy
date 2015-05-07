@@ -6,12 +6,16 @@
     <!-- contents -->
     <ion-content>
         <ion-list show-delete="shouldShowDelete" can-swipe="true">
+        <ul class="list list-inset">
+            <li>
             <ion-item ng-repeat="item in items">
             <ion-checkbox ng-model="item.checked" ng-checked="item.checked" class="item-checkbox-right checkbox-balanced">
                 {{item.todo_list_item_name}}
                 </ion-checkbox>
                 <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button> 
             </ion-item>
+            </li>
+        </ul>
         </ion-list>
     </ion-content>
 

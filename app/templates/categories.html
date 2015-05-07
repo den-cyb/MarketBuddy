@@ -8,12 +8,18 @@
       <img id="icon" src="images\ionic.png">
       </div>
         <ion-list>
+        <ul class="list list-inset">
+            <li>
             <ion-item ng-repeat="category in categories" href="#/lists/{{category.id}}">
                 {{category.category_name}}
             </ion-item>
+            </li>
+            <li>
             <ion-item href="#/app/about">
             	About App
         	</ion-item>
+        	</li>
+        </ul>
         </ion-list>
     </ion-content>
 </ion-view>
