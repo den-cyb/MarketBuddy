@@ -50,7 +50,6 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     }
   })
 
-
   .state('config', {
       url: '/config',
       templateUrl: 'templates/config.html',

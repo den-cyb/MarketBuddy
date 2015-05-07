@@ -1,4 +1,3 @@
-
 var db = null;
 
 angular.module('starter.controllers', ['ionic'])
@@ -62,10 +61,8 @@ angular.module('starter.controllers', ['ionic'])
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblCategories (id integer primary key, category_name text)");
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoLists (id integer primary key, category_id integer, todo_list_name text)");
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoListItems (id integer primary key, todo_list_id integer, todo_list_item_name text)");
-                tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["Shopping"]);
-                tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["Chores"]);
-                tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["School"]);
-            });
+                tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["Shoppinglists"]);
+           });
             $location.path("/categories");
             $ionicLoading.hide();
         }
@@ -108,7 +105,7 @@ angular.module('starter.controllers', ['ionic'])
  
     $scope.insert = function() {
         $ionicPopup.prompt({
-            title: 'Enter a new TODO list',
+            title: 'Add a new Shoppinglist',
             inputType: 'text'
         })
         .then(function(result) {
@@ -154,7 +151,7 @@ angular.module('starter.controllers', ['ionic'])
  
     $scope.insert = function() {
         $ionicPopup.prompt({
-            title: 'Enter a new TODO list',
+            title: 'Add an item to this list',
             inputType: 'text'
         })
         .then(function(result) {

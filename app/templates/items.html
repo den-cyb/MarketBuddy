@@ -1,13 +1,26 @@
-<ion-view title="Items">
+<!-- header -->
+<ion-view title="Items">    
     <ion-nav-buttons side="right">
         <button class="right button button-icon icon ion-plus" ng-click="insert()"></button>
     </ion-nav-buttons>
+    <!-- contents -->
     <ion-content>
-        <ion-list show-delete="false" can-swipe="true">
+        <ion-list show-delete="shouldShowDelete" can-swipe="true">
             <ion-item ng-repeat="item in items">
+            <ion-checkbox ng-model="item.checked" ng-checked="item.checked" class="item-checkbox-right checkbox-balanced">
                 {{item.todo_list_item_name}}
-            <ion-option-button class="button-assertive icon ion-trash-a" ng-click="delete(item)"></ion-option-button>
+                </ion-checkbox>
+                <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button> 
             </ion-item>
         </ion-list>
     </ion-content>
+
+    <!-- footer -->
+<ion-footer-bar align-title="left" class="bar-assertive" id="footer">
+     <ion-toggle class="bar bar-header bar-assertive" ng-model="shouldShowDelete">
+  Delete List
+</ion-toggle>
+</ion-footer-bar>
+
 </ion-view>
+        
