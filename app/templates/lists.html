@@ -8,9 +8,9 @@
         <ion-list show-delete="shouldShowDelete">
         <ul class="list list-inset">
         <li>
-    <ion-item ng-repeat="list in lists" href="#/items/{{list.id}}">
+    <ion-item ng-repeat="list in lists" href="#/items/{{list.id}}" can-swipe="true">
         {{list.todo_list_name}}
-        <ion-delete-button class="ion-minus-circled"ng-click="delete(list)"></ion-delete-button>        
+    <ion-delete-button class="ion-minus-circled"ng-click="delete(list)"></ion-delete-button>        
     </ion-item>
     </li>
     </ul>

@@ -32,22 +32,14 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     controller: 'AppCtrl'
   })
 
-  .state('app.about', {
-    url: "/about",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/about.html"
-      }
-    }
+  .state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html'
   })
 
   .state('app.home', {
     url: "/home",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/home.html"
-      }
-    }
+    templateUrl: "templates/home.html"
   })
 
   .state('config', {

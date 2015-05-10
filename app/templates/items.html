@@ -5,17 +5,23 @@
     </ion-nav-buttons>
     <!-- contents -->
     <ion-content>
+        
         <ion-list show-delete="shouldShowDelete">
         <ul class="list list-inset">
+        
         <li>
             <ion-item ng-repeat="item in items">
-            <ion-checkbox ng-model="item.checked" ng-checked="item.checked" class="item-checkbox-right checkbox-balanced">
+            
                 {{item.todo_list_item_name}}
-                </ion-checkbox>
-                <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button> 
+                
+                <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button>                 
+                <ion-option-button class="button-info button-balanced ion-checkmark-circled" ng-click="purchased(item)">
+                </ion-option-button>
             </ion-item>
-           </li>
-           </ul>
+            </li>
+            </ul>
+
+            
         </ion-list>
     </ion-content>
 
@@ -25,5 +31,4 @@
   Delete List
 </ion-toggle>
 </ion-footer-bar>
-
 </ion-view>

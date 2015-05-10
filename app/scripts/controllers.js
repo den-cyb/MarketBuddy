@@ -62,6 +62,7 @@ angular.module('starter.controllers', ['ionic'])
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoLists (id integer primary key, category_id integer, todo_list_name text)");
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoListItems (id integer primary key, todo_list_id integer, todo_list_item_name text)");
                 tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["Shoppinglists"]);
+                
            });
             $location.path("/categories");
             $ionicLoading.hide();
@@ -135,7 +136,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 .controller("ItemsController", function($scope, $ionicPlatform, $ionicPopup, $cordovaSQLite, $stateParams) {
    $scope.items = [];
- 
+   
     $ionicPlatform.ready(function() {
         var query = "SELECT id, todo_list_id, todo_list_item_name FROM tblTodoListItems where todo_list_id = ?";
         $cordovaSQLite.execute(db, query, [$stateParams.listId]).then(function(res) {
@@ -167,6 +168,7 @@ angular.module('starter.controllers', ['ionic'])
             }
         });
     }
+        
     $scope.delete = function(item) {
         var query = "DELETE FROM tblTodoListItems where id = ?";
         $cordovaSQLite.execute(db, query, [item.id]).then(function(res) {
