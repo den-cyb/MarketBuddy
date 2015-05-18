@@ -115,8 +115,8 @@ angular.module('starter.controllers', ['ionic'])
                 tx.executeSql("DROP TABLE IF EXISTS tblCategories");
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblCategories (id integer primary key, category_name text)");
                 tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoLists (id integer primary key autoincrement, category_id integer, todo_list_name text)");
-                tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoListItems (id integer primary key autoincrement, todo_list_id integer, todo_list_item_name text, createdAt date)");
-                tx.executeSql("CREATE TABLE IF NOT EXISTS tblPurchased (id integer primary key autoincrement, todo_list_id integer, todo_list_purchase_name text, createdAt date)");
+                tx.executeSql("CREATE TABLE IF NOT EXISTS tblTodoListItems (id integer primary key autoincrement, todo_list_id integer, todo_list_item_name text, createdAt text)");
+                tx.executeSql("CREATE TABLE IF NOT EXISTS tblPurchased (id integer primary key autoincrement, todo_list_id integer, todo_list_purchase_name text, createdAt text)");
                 tx.executeSql("INSERT INTO tblCategories (category_name) VALUES (?)", ["Shoppong Lists"]);
                 
            });
