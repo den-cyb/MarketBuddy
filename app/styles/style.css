@@ -39,7 +39,7 @@
 }
 #icon{
 	position: absolute;
-	top:150px;	
+	top:100px;	
     left: 50%;
     -webkit-transform: translate( -50%);
     transform: translate( -50%);
@@ -54,13 +54,13 @@ i{
 #appName{
 	font-family: Papyrus;
 	text-align: center;
-	padding-top: 90px;
+	padding-top: 50px;
 	font-size: 50px;
 	color: white;
 	text-shadow: 2px 2px orange;
 }
 #motto{
-	padding-top: 200px;
+	padding-top: 160px;
 	text-align: center;
 	font-family: rage;
 	font-size: 20px;
@@ -75,4 +75,9 @@ h3,h4{
 .strike{
 	text-decoration: line-through;
 	color: red;
+}
+.cdate{
+	color:gray;
+	font-size: 10px;
+	text-align: right;
 }

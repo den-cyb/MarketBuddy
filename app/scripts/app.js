@@ -25,23 +25,17 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
-
   .state('about', {
     url: '/about',
     templateUrl: 'templates/about.html'
   })
 
-  .state('app.home', {
-    url: "/home",
-    templateUrl: "templates/home.html"
+  .state('log', {
+    url: '/log',
+    templateUrl: 'templates/log.html'
   })
 
+  
   .state('config', {
       url: '/config',
       templateUrl: 'templates/config.html',
@@ -62,5 +56,12 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
       templateUrl: "templates/items.html",
       controller: "ItemsController"
   });
+
+  /*.state('report', {
+    url: '/report',
+    templateUrl: 'templates/report.html',
+    controller: 'ReportController'
+  })*/
+
 $urlRouterProvider.otherwise('/config');
 });

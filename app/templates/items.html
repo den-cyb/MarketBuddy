@@ -4,31 +4,39 @@
         <button class="right button button-icon icon ion-plus" ng-click="insert()"></button>
     </ion-nav-buttons>
     <!-- contents -->
-    <ion-content>
-        
+    <ion-content>        
         <ion-list show-delete="shouldShowDelete">
-        <ul class="list list-inset">
-        
+        <ul class="list list-inset">        
         <li>
+         <div class="item item-divider">Unpurchased Items</div>
             <ion-item ng-repeat="item in items">
-            
-                {{item.todo_list_item_name}}
-                
-                <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button>                 
+                <ion-delete-button class="ion-minus-circled"ng-click="delete(item)"></ion-delete-button>             
+                {{item.todo_list_item_name}}                
                 <ion-option-button class="button-info button-balanced ion-checkmark-circled" ng-click="purchased(item)">
                 </ion-option-button>
             </ion-item>
             </li>
             </ul>
-
-            
+            </ion-list>
+            <ion-list show-delete="shouldShowDelete">
+            <ul class="list list-inset">
+            <li>
+            <div>
+            <div class="item item-divider">Purchased Items</div>
+                <ion-item ng-repeat="purchase in purchases">
+                <ion-delete-button class="ion-minus-circled"ng-click="deleteP(purchase)"></ion-delete-button>                
+                <i class="strike">{{purchase.todo_list_purchase_name}}</i>   - <i class="cdate">{{purchase.createdAt}}</i>
+                <ion-option-button class="button-info button-positive ion-arrow-up-b" ng-click="readd(purchase)">
+            </ion-item>
+            </div>
+            </li>
+            </ul>            
         </ion-list>
     </ion-content>
-
     <!-- footer -->
 <ion-footer-bar align-title="left" class="bar-assertive" id="footer">
      <ion-toggle class="bar bar-header bar-assertive" ng-model="shouldShowDelete">
-  Delete List
+  Delete Items
 </ion-toggle>
 </ion-footer-bar>
 </ion-view>

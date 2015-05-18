@@ -1,0 +1,56 @@
+<ion-view title="All Lists Report">
+
+       <ion-content>
+         <ion-list>
+      <div ng-repeat="list in lists">
+        <ul class="list list-inset">
+        <li>
+        <ion-item class="item-stable" ng-click="toggleList(list)" ng-class="{active: true}">
+           &nbsp; {{list.todo_list_name}}            
+        </ion-item>
+        <ion-item class="item-accordion" ng-repeat="item in items" >
+             {{item.todo_list_item_name}}
+        </ion-item>
+        </li>
+        </ul>
+      </div>
+    </ion-list>
+    </ion-content>
+  </ion-view>
+<!-- <ion-view title="All Lists Report">
+<ion-content>
+<ion-list>
+<ion-item class="item-stable" ng-repeat="list in lists">
+      <table>
+          <th >
+              <td>
+                  &nbsp; {{list.todo_list_name}}
+              </td>
+          </tr>
+          <tr ng-repeat="item in list.todo_list_items">
+              <td>
+                  {{item.todo_list_item_name}}
+              </td>
+          </tr>
+      </table>       
+  </ion-item>
+</ion-list>
+</ion-content>
+</ion-view> -->
+
+<!-- <ion-view title="All Lists Report">
+
+       <ion-content>
+         <ion-list>
+   
+        <ion-item class="item-stable" ng-repeat="list in lists">
+           &nbsp; {{list.todo_list_name}}&nbsp;ID&nbsp;&nbsp; {{list.id}}            
+        </ion-item>
+      
+        <ion-item class="item-accordion" ng-repeat="item in items" >
+             {{item.todo_list_item_name}}&nbsp; &nbsp;Found in list with id&nbsp; &nbsp; {{item.todo_list_id}}
+        </ion-item>
+        
+    </ion-list>
+    </ion-content>
+  </ion-view> -->

@@ -11,15 +11,19 @@
         <ul class="list list-inset">
   		<li>
             <ion-item ng-repeat="category in categories" href="#/lists/{{category.id}}">
-                {{category.category_name}}
+              {{category.category_name}}
             </ion-item>
            </li>
-           <li> 
-            
+          <!--  <li>
+            <ion-item href='#/report'>
+            Lists Report
+            </ion-item>
+          </li> -->
+           <li>            
         	<ion-item href='#/about'>
         		About App
         	</ion-item>
-        	</li>
+        	</li>          
         	</ul>
         </ion-list>
     </ion-content>
